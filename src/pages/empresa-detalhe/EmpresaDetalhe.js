@@ -25,9 +25,6 @@ export default function EmpresaDetalhe(props) {
                     if (response.enterprise) {
                         setEmpresa(response.enterprise);
                     }
-                },
-                (error) => {
-                    console.log(error)
                 }
             )
     }

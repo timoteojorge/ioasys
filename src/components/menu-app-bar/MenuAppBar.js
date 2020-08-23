@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     cssOutlinedInput: {
-        borderColor: `#fff !important`,
         color: `#fff !important`,
     },
     focused: {
@@ -84,12 +83,10 @@ export default function MenuAppBar(props) {
     };
 
     return (
-        <div className={classes.root}>
-            <AppBar position="static" color="secondary">
-                <Toolbar>
-                    {getToolbarContent()}
-                </Toolbar>
-            </AppBar>
-        </div>
+        <AppBar position="static" color="secondary">
+            <Toolbar>
+                {getToolbarContent()}
+            </Toolbar>
+        </AppBar>
     );
 }

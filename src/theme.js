@@ -18,4 +18,17 @@ const theme = createMuiTheme({
     },
 });
 
+theme.typography.h3 = {
+    fontSize: '3rem',    
+    [theme.breakpoints.down('sm')]: {
+        fontSize: '2rem',
+    },
+}
+theme.typography.h4 = {
+    fontSize: '2.125rem',    
+    [theme.breakpoints.down('sm')]: {
+        fontSize: '1.2rem',
+    },
+}
+
 export default theme;

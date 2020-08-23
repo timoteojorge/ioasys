@@ -34,9 +34,6 @@ export default function Empresas(props) {
                     } else {
                         setEmpresas(response.enterprises);
                     }
-                },
-                (error) => {
-                    console.log(error)
                 }
             )
     }
@@ -66,7 +63,7 @@ export default function Empresas(props) {
                     <Grid container direction="row">
                         <Grid item className="company-logo">
                             <Grid container direction="column" justify="center" alignItems="center" className="logo-container">
-                                <Grid item >
+                                <Grid item md={true} sm={true} xs={true}>
                                     <Typography variant="h3" className="logo-title">
                                         {emp.enterprise_name}
                                     </Typography>
@@ -75,17 +72,17 @@ export default function Empresas(props) {
                         </Grid>
                         <Grid item>
                             <Grid container direction="column" className="company-details">
-                                <Grid item>
+                                <Grid item md={true} sm={true} xs={true}>
                                     <Typography variant="h3">
                                         {emp.enterprise_name}
                                     </Typography>
                                 </Grid>
-                                <Grid item>
+                                <Grid item md={true} sm={true} xs={true}>
                                     <Typography variant="h4" className="company-type">
                                         {emp.enterprise_type.enterprise_type_name}
                                     </Typography>
                                 </Grid>
-                                <Grid item>
+                                <Grid item md={true} sm={true} xs={true}>
                                     <Typography variant="h5" className="company-type">
                                         {emp.country}
                                     </Typography>

@@ -1,19 +1,10 @@
-import { Button, Grid, IconButton, TextField, withStyles, CircularProgress, Backdrop, makeStyles } from '@material-ui/core';
+import { Backdrop, Button, CircularProgress, Grid, IconButton, makeStyles, TextField } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import { LockOpen, MailOutline, Visibility, VisibilityOff, Error } from '@material-ui/icons';
+import { Error, LockOpen, MailOutline, Visibility, VisibilityOff } from '@material-ui/icons';
 import React, { useState } from 'react';
+import { Redirect } from "react-router-dom";
 import logo from '../../../assets/img/logo-home.png';
 import './Login.css';
-import { useHistory } from "react-router-dom";
-
-const styles = theme => ({
-    margin: {
-        margin: theme.spacing(2),
-    },
-    padding: {
-        padding: theme.spacing(1)
-    },
-});
 
 const useStyles = makeStyles((theme) => ({
     backdrop: {
@@ -22,19 +13,18 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Login(props) {
+export default function Login(props) {
     const { setClient, setAccessToken, setUid, serverUrl } = props;
 
     const classes = useStyles();
-
-    let history = useHistory();
 
     const [values, setValues] = useState({
         email: '',
         password: '',
         showPassword: false,
         backdropOpen: false,
-        invalidCredentials: false
+        invalidCredentials: false,
+        redirect: false
     });
 
     const handleClickShowPassword = () => {
@@ -74,8 +64,7 @@ function Login(props) {
             .then(res => getAuthorization(res))
             .then(
                 () => {
-                    history.push('/empresas');
-                    setValues({ ...values, backdropOpen: false });
+                    setValues({ ...values, backdropOpen: false, redirect: true });
                 },
                 () => {
                     setValues({ ...values, backdropOpen: false, invalidCredentials: true });
@@ -101,7 +90,7 @@ function Login(props) {
         }
         return (
             <InputAdornment position="end">
-                <IconButton                    
+                <IconButton
                     onClick={handleClickShowPassword}
                     onMouseDown={handleMouseDownPassword}
                 >
@@ -110,6 +99,10 @@ function Login(props) {
             </InputAdornment>
         );
     };
+
+    if (values.redirect) {
+        return <Redirect to='/empresas' />;
+    }
 
     return (
         <Grid className="main-container" container direction="column" justify="center" alignItems="center">
@@ -175,5 +168,3 @@ function Login(props) {
         </Grid>
     );
 }
-
-export default withStyles(styles)(Login);

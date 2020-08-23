@@ -1,0 +1,32 @@
+.detail-toolbar {
+    color: #fff !important;
+}
+
+.detail-toolbar-title {
+    text-transform: uppercase;
+    font-weight: bold !important;
+}
+
+.detail-paper {
+    padding: 20px;
+    margin: 20px;
+}
+
+.detail-company-logo {
+    background-color: #7dc075;
+    width: 100%;
+    margin-bottom: 30px !important;
+    padding: 30px;
+    color: #fff !important;
+    font-weight: bold !important;
+    text-align: center;
+}
+
+.detail-paper {
+    margin-top: 20px;
+}
+
+.detail-text {
+    font-size: 17px;
+    color: #8d8c8c;
+}

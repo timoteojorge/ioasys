@@ -1,0 +1,44 @@
+.main-container {
+    min-height: 100vh;
+}
+
+.no-companies-found {
+    color: #b5b4b4 !important;
+}
+
+.paper {
+    padding: 20px;
+    cursor: pointer;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.company-logo {
+    background-color: #7dc075;
+    width: 350px;
+}
+
+.company-details {
+    padding: 20px;
+}
+
+.company-type {
+    color: #8d8c8c;
+}
+
+.logo-container {
+    height: 100%;
+    padding: 20px;
+}
+
+.companies-container {
+    margin-top: 30px;
+}
+
+.logo-title {
+    color: white;
+    font-weight: bold !important;
+    word-break: break-word !important;
+    text-align: center;
+}
+

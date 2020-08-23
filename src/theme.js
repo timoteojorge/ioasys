@@ -30,5 +30,11 @@ theme.typography.h4 = {
         fontSize: '1.2rem',
     },
 }
+theme.typography.h5 = {
+    fontSize: '1.5rem',    
+    [theme.breakpoints.down('sm')]: {
+        fontSize: '0.9rem',
+    },
+}
 
 export default theme;
